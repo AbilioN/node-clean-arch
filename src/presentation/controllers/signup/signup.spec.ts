@@ -197,7 +197,6 @@ describe('SignUp Controller' , () => {
         expect(httpResponse.body).toEqual(new ServerError())
     })
 
-
     test('Should call AddAccount with correct values', async () => {
         
         const {sut , addAccountStub } = makeSut()
@@ -220,7 +219,6 @@ describe('SignUp Controller' , () => {
         })
     })
 
-
     test('Should return 500 if AddAccount throws', async () => {
         const {sut , addAccountStub } = makeSut()
         jest.spyOn(addAccountStub, 'add').mockImplementation(() => {
@@ -242,7 +240,6 @@ describe('SignUp Controller' , () => {
         expect(httpResponse.statusCode).toBe(500)
         expect(httpResponse.body).toEqual(new ServerError())
     })
-
 
     test('Should return 200 if valid data is provided', async () => {
         const {sut , addAccountStub } = makeSut()
